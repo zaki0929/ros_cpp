@@ -11,6 +11,8 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  sensor_msgs
+  geometry_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -68,10 +70,12 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+  sensor_msgs
+  geometry_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -130,6 +134,9 @@ target_link_libraries(listener ${catkin_LIBRARIES})
 
 add_executable(urg_sub src/urg_sub.cpp)
 target_link_libraries(urg_sub ${catkin_LIBRARIES})
+
+add_executable(go_forward src/go_forward.cpp)
+target_link_libraries(go_forward ${catkin_LIBRARIES})
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/ros_cpp.cpp

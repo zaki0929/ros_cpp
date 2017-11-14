@@ -1,5 +1,5 @@
 #include "ros/ros.h"
-#include <sensor_msgs/LaserScan.h>
+#include "sensor_msgs/LaserScan.h"
 
 #define RANGE_MAX 5.6
 
