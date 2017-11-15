@@ -33,25 +33,25 @@ public:
     ROS_INFO("center: [%lf], left: [%lf], right: [%lf]", center, left, right);
     //ROS_INFO("center number: [%lf]", (-msg->angle_min)/msg->angle_increment);
 
-    if(center < 0.3){
+    if(center < 0.5){
       ROS_WARN("center warning!!");
       cmd_vel.linear.x = 0.0;
       cmd_vel.linear.y = 0.0;
-      cmd_vel.angular.z = 0.6;
+      cmd_vel.angular.z = 1.0;
     }
-    if(left < 0.3){
+    if(left < 0.5){
       ROS_WARN("left warning!!");
       cmd_vel.linear.x = 0.0;
       cmd_vel.linear.y = 0.0;
-      cmd_vel.angular.z = -0.6;
+      cmd_vel.angular.z = -1.0;
     }
-    if(right < 0.3){
+    if(right < 0.5){
       ROS_WARN("right warning!!");
       cmd_vel.linear.x = 0.0;
       cmd_vel.linear.y = 0.0;
-      cmd_vel.angular.z = 0.6;
+      cmd_vel.angular.z = 1.0;
     }
-    if(center >=0.3 && left >= 0.3 && right >= 0.3){
+    if(center >=0.5 && left >= 0.5 && right >= 0.5){
       cmd_vel.linear.x = 0.2;
       cmd_vel.linear.y = 0.0;
       cmd_vel.angular.z = 0.0;
