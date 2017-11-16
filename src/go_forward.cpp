@@ -72,7 +72,7 @@ private:
 int main(int argc, char **argv){
   ros::init(argc, argv, "go_forward");
 
-  GoForward GWobject;
+  GoForward GFobj;
 
   ros::spin();
   return 0;
